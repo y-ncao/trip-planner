@@ -1,41 +1,57 @@
-# Tokyo Trip 页面 · GitHub Pages 发布说明
+# Trip Planner · 旅行计划网站
 
-这个文件夹是一个**独立的、只含东京行程这一个页面**的静态网站,可直接发布到 GitHub Pages。
+纯静态网站，托管在 GitHub Pages。**根目录永远放「当前行程」**，旧行程搬进 `archive/<行程名>/` 归档。
 
-## 文件夹内容
+- 当前行程（2026 巴黎 + 南法）：https://y-ncao.github.io/trip-planner/
+- 已归档（2026 东京）：https://y-ncao.github.io/trip-planner/archive/tokyo-2026/
 
-- `index.html` — 整篇行程(第 1–8 节)渲染好的网页,中日文 + 表格 + 图片都在里面。
-- `assets/` — 所有本地图片(food / googlemaps / recommendations),约 51MB。
-- `.nojekyll` — 让 GitHub 跳过 Jekyll 处理,直接按静态文件托管。
-- 行程里景点的少量图来自 Wikimedia 在线链接(联网显示);其余都是本地图。
+## 文件夹结构
 
-## 发布到 GitHub Pages(公开 URL)
+```text
+trip-planner/
+├── index.html            当前行程页面（单文件，CSS / JS 内联）
+├── assets/photos/        当前行程图片（Wikimedia Commons，作者与协议列在页面 §8）
+├── archive/
+│   └── tokyo-2026/       2026 东京：index.html + assets/ + scripts/，自包含
+├── publish.sh            提交并推送，GitHub Pages 自动更新
+├── .nojekyll             让 GitHub Pages 跳过 Jekyll，按原样托管
+└── README.md
+```
 
-> 注意:免费版 GitHub Pages 的页面是**公开**的——任何拿到 URL 的人都能打开,无法做成登录才能看。这个仓库里**只放了这一个页面+图片**,不会暴露你其它文件。
+页面结构沿用东京版：左侧导航、旅程总览、机票、酒店、每日行程表（模块 / 地点 / 图片 / 备注）、必吃榜、景点清单、出发前准备、Archive。
 
-1. 在 https://github.com 登录后,点右上角 `+` → `New repository`,起名比如 `tokyo-trip`,选 Public,创建(不要勾 Add README,避免冲突)。
-2. 把本文件夹里的 **全部内容**(`index.html`、`assets/`、`.nojekyll`)上传到仓库:
-   - 简单方式:仓库页面点 `Add file` → `Upload files`,把这些拖进去 commit。(`assets` 文件夹整体拖入即可。)
-   - 或用 git 命令:
-     ```bash
-     cd tokyo-trip-site
-     git init && git add . && git commit -m "tokyo trip page"
-     git branch -M main
-     git remote add origin https://github.com/<你的用户名>/tokyo-trip.git
-     git push -u origin main
-     ```
-3. 仓库 `Settings` → 左侧 `Pages` → `Build and deployment` → Source 选 `Deploy from a branch` → Branch 选 `main` / `/ (root)` → `Save`。
-4. 等约 1 分钟,页面就上线在:
-   `https://<你的用户名>.github.io/tokyo-trip/`
+- **每日地图**读取当天行程表里地点链接的 `data-lat` / `data-lng`。改了表格里的地点，地图编号和「Google Maps 路线」按钮会自动跟着变，不用单独维护地图数据。底图来自 OpenStreetMap / CARTO，Leaflet 从 cdnjs 加载。
+- **图片**全部存在本地 `assets/`，不引用远程图片。
 
-## 如果你想要"私有 / 登录才能看"
+## 更新并发布
 
-GitHub Pages 免费版做不到访问控制。可行的替代:
+直接编辑 `index.html`（或往 `assets/` 加图片），然后运行：
 
-- **保持仓库 private、不开 Pages**:你可以本地直接双击 `index.html` 打开看;团队成员有仓库权限就能 clone 后本地看。
-- **带密码的托管**:如 Cloudflare Pages / Netlify 的密码保护(部分为付费功能),或 GitHub Enterprise 的 Pages access control(付费)。
-- 需要的话我可以帮你按其中一种方案重新出配置。
+```bash
+./publish.sh "更新说明"
+```
 
-## 更新页面
+脚本只提交网站相关的文件（`index.html`、`assets/`、`archive/`、`README.md`、`publish.sh`、`.nojekyll`）。推送后大约 1 分钟线上生效。
 
-行程 Markdown 以后有改动,重新生成 `index.html` 覆盖即可(图片有新增时把对应文件放进 `assets/`)。
+本地预览：
+
+```bash
+python3 -m http.server 8765
+```
+
+然后打开 http://localhost:8765/ 。
+
+## 归档当前行程，开始下一个
+
+```bash
+mkdir -p archive/paris-2026
+git mv index.html archive/paris-2026/index.html
+git mv assets archive/paris-2026/assets
+```
+
+然后在根目录放新行程的 `index.html` 和 `assets/`，并在新旧两个页面左侧导航的「Trip Planner」区块里互相加上链接。页面里的图片都用相对路径，整个文件夹一起搬过去就不会断图。
+
+## 注意
+
+- GitHub Pages 免费版的页面是**公开**的，拿到 URL 的人都能打开。确认号、护照号这类敏感信息尽量不要写进页面。
+- 这个仓库原名 `tokyo-trip`，2026-09 改名为 `trip-planner`。旧地址 `https://y-ncao.github.io/tokyo-trip/` 已经失效，东京行程改在上面的 archive 地址访问。
