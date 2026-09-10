@@ -2,7 +2,7 @@
 
 纯静态网站，托管在 GitHub Pages。**根目录永远放「当前行程」**，旧行程搬进 `archive/<行程名>/` 归档。
 
-- 当前行程（2026 巴黎 + 南法）：https://y-ncao.github.io/trip-planner/
+- 当前行程（2026-10-10 → 10-18 巴黎 + 南法生日旅行）：https://y-ncao.github.io/trip-planner/
 - 已归档（2026 东京）：https://y-ncao.github.io/trip-planner/archive/tokyo-2026/
 
 ## 文件夹结构
