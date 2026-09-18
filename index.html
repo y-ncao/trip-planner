@@ -104,6 +104,18 @@ code{background:transparent;padding:0;border-radius:0;font:inherit;}
 .k-sight{background:#1f3f6e;} .k-food{background:#b03a2e;} .k-shop{background:#7c3aed;} .k-hotel{background:#475569;} .k-transit{background:#0f766e;} .k-nature{background:#15803d;}
 .map-pin-wrap{background:transparent;border:0;}
 .map-pin{display:flex;align-items:center;justify-content:center;width:24px;height:24px;border:2px solid #fff;border-radius:999px;color:#fff;font:700 12px/1 system-ui,sans-serif;box-shadow:0 2px 6px rgba(0,0,0,.35);}
+.opt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px;margin:12px 0 18px;}
+.opt-card{border:1px solid var(--line);border-radius:8px;background:#fff;overflow:hidden;font-size:13px;scroll-margin-top:12px;}
+.opt-card > img{display:block;width:100%;height:160px;object-fit:cover;border-bottom:1px solid var(--line);}
+.opt-body{padding:10px 12px 12px;}
+.opt-body h4{margin:0;font-size:15px;color:var(--h3);}
+.opt-body p{margin:4px 0;}
+.opt-body .opt-en{color:var(--muted);font-size:12px;margin:0 0 4px;}
+.opt-body ul{margin:6px 0;padding-left:18px;}
+.opt-body li{margin:2px 0;}
+.opt-when{margin:8px 0 6px!important;padding:6px 8px;border:1px solid #ffe58f;border-radius:6px;background:#fffbe6;font-size:12px;line-height:1.6;}
+.opt-body ul.opt-links{margin:8px 0 0;padding:8px 0 0;border-top:1px dashed var(--line);list-style:none;}
+.opt-links li{margin:3px 0;}
 .map-fallback{margin:0;padding:14px;color:var(--muted);font-size:13px;}
 .muted{color:var(--muted);}
 .small{font-size:12px;}
@@ -172,6 +184,7 @@ td img.big,p img.big{max-width:100%;max-height:190px;}
 <a class="nav-sub" href="#d3">D3 10/12 周一 卢浮宫 Louvre / 路易威登基金会 Fondation Louis Vuitton</a>
 <a class="nav-sub" href="#d4">D4 10/13 周二 🎂 生日</a>
 <a class="nav-sub" href="#paris-swaps">巴黎备选 / 雨天</a>
+<a class="nav-sub" href="#riviera-menu">南法一日游菜单</a>
 <a class="nav-sub" href="#d5">D5 10/14 周三 巴黎 → 尼斯</a>
 <a class="nav-sub" href="#d6">D6 10/15 周四 埃兹 Èze / 摩纳哥 Monaco</a>
 <a class="nav-sub" href="#d7">D7 10/16 周五 自由城 Villefranche / 费拉角 Cap Ferrat</a>
@@ -201,7 +214,7 @@ td img.big,p img.big{max-width:100%;max-height:190px;}
 <div class="note-box"><p><strong>这版行程的前提</strong></p><ul>
 <li><strong>日期</strong>：10/10（周六）从 SFO 出发 → 10/18（周日）回到 SFO，9 天 7 晚。</li>
 <li>🎂 <strong>10/13（周二）生日在巴黎</strong>：排在巴黎第三天（<a href="#d4">D4</a>），时差倒过来了，当天不赶路。</li>
-<li><strong>巴黎 3 晚 → 尼斯 4 晚</strong>：巴黎之前去过，只排这几年新开或重开的地方和街区；南法主方案是尼斯大本营（不开车），想看山城市集可以换<a href="#plan-b">备选 B：普罗旺斯（Provence）自驾</a>。</li>
+<li><strong>巴黎 3 晚 → 尼斯 4 晚</strong>：巴黎之前去过，只排这几年新开或重开的地方和街区；南法主方案是尼斯大本营（不开车），每天去哪还没定死，先看<a href="#riviera-menu">南法一日游菜单</a>按天气和喜好挑；想看山城市集可以换<a href="#plan-b">备选 B：普罗旺斯（Provence）自驾</a>。</li>
 <li><strong>离出发只剩一个月</strong>：机票、酒店、TGV 高铁、生日晚餐要现在就订，时间点见<a href="#checklist">第 7 节清单</a>。</li>
 <li>营业时间、票价、订位规则、航班时刻都是 <strong>2026-09-10 的查询快照</strong>（卢浮宫（Louvre）、圣母院（Notre-Dame）9/18 又核对过一次），出发前再复核一次；表里写「未核实」的是官网没查到的。</li>
 </ul></div>
@@ -1098,6 +1111,266 @@ td img.big,p img.big{max-width:100%;max-height:190px;}
 </tr>
 </tbody>
 </table></div>
+<h3 id="riviera-menu">南法一日游菜单：尼斯为基地，按天气和喜好再定</h3>
+<div class="note-box">
+<p><strong>怎么用这份菜单</strong></p>
+<ul>
+<li>住宿固定在尼斯（Nice），从下面 A–I 挑喜欢的一日路线，再按最终天数组合。不需要全部去，也不默认把「可选景点」塞进当天。</li>
+<li><strong>真正能玩的时间</strong>：10/14 周三下午（到尼斯后，半天）、<strong>10/15 周四、10/16 周五、10/17 周六三个整天</strong>、10/18 周日上午（看航班，半天）。住四晚不等于有四个完整游玩日。</li>
+<li>下面的 <a href="#d5">D5</a>–<a href="#d9">D9</a> 是目前的默认草稿：D5 下午 ≈ A，D6 ≈ B，D7 ≈ C，D8 ≈ E + F 各半天。哪天想换，直接从菜单里挑一张卡片替换；天气不好就换 H 或 A。</li>
+<li>菜单由 Hermes 从小红书等参考帖整理（9/18）；每张卡片里「📅 这几天要注意」是按我们 10/14–10/18 的日期补充的。<strong>小红书链接要在 App 里或登录后打开</strong>（未登录时 8 个里有 7 个显示「安全限制」）；标「参考帖」的只核对过标题，DJQueen 四日游读过正文。</li>
+</ul>
+</div>
+<div class="opt-grid">
+
+<div class="opt-card" id="opt-a">
+<img src="assets/photos/vieux-nice.jpg" alt="尼斯老城 Vieux Nice" loading="lazy" title="尼斯老城 Vieux Nice · 📷 Rundvald · Public domain · Wikimedia Commons">
+<div class="opt-body">
+<h4>A｜尼斯本城 Nice</h4>
+<p class="opt-en">Old Town, Local Food &amp; Seaside Sunset</p>
+<p><span class="tag glance">半天–一天</span><span class="tag walk">轻松</span><span class="tag pick">重点讨论</span></p>
+<p class="opt-focus"><strong>当天重点</strong>：享受尼斯本身，不只是把它当住宿基地。老城（Vieux Nice）巷子、萨莱雅市集（Cours Saleya）、当地小吃，下午海边散步或喝咖啡，傍晚去城堡山（Colline du Château）或海边看景。</p>
+<ul>
+<li>适合：抵达日、休息日、美食与城市散步。</li>
+<li>取舍：不强制加入美术馆，艺术主题另看 <a href="#opt-h">H</a>。</li>
+<li>现在草稿：<a href="#d5">D5 10/14 下午</a>。</li>
+</ul>
+<p class="opt-when">📅 <strong>这几天要注意</strong>：萨莱雅花市周二至周日开（周一换成古董市），10/18 周日 6:30–13:30 也开，适合回程那天早上；城堡山公园 10 月开到 20:00，日落 10/14 18:49 → 10/17 18:44；鹰嘴豆煎饼老店 Chez Pipo 周一、周二休。</p>
+<ul class="opt-links">
+<li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Nice+France">Google Maps｜尼斯 Nice</a></li>
+<li>📕 <a href="https://www.rednote.com/discovery/item/6aa924e4000000001401043d">小红书参考帖｜尼斯一日：从机场进城到日落的完整路线</a> <span class="muted small">（只核对过标题）</span></li>
+</ul>
+</div>
+</div>
+
+<div class="opt-card" id="opt-b">
+<img src="assets/photos/eze.jpg" alt="埃兹村 Èze" loading="lazy" title="埃兹村 Èze · 📷 Jean Pierre Lozi · CC BY-SA 3.0 · Wikimedia Commons">
+<div class="opt-body">
+<h4>B｜埃兹 + 摩纳哥 Èze &amp; Monaco</h4>
+<p class="opt-en">Hilltop Village &amp; Monaco Highlights</p>
+<p><span class="tag deep">完整一天</span><span class="tag risk">中等偏满</span><span class="tag pick">重点讨论</span></p>
+<p class="opt-focus"><strong>当天重点</strong>：山顶古村与海滨都市的反差。上午逛埃兹村（Èze）和异域花园，下午去摩纳哥老城（Monaco-Ville），再按兴趣去蒙特卡洛（Monte-Carlo）。</p>
+<ul>
+<li>适合：第一次来、喜欢标志性景观与俯瞰海景。</li>
+<li>可选：走尼采小径（Chemin de Nietzsche）下山，天气或体力不合适就坐车。</li>
+<li>取舍：这天不再加芒通（Menton）。</li>
+<li>现在草稿：<a href="#d6">D6 10/15 周四</a>。</li>
+</ul>
+<p class="opt-when">📅 <strong>这几天要注意</strong>：摩纳哥亲王宫（Palais Princier）国事厅 <strong>10/15 是今年最后一天开放</strong>，想进宫就只能排 10/15 周四；只看老城和外观哪天都行（卫兵换岗每天 11:55）。蒙特卡洛赌场内部参观只在 10:00–13:00。上埃兹村的公交每天只有 6–8 班，前一天查好时刻。</p>
+<ul class="opt-links">
+<li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Eze+Village+France">Google Maps｜埃兹村 Èze Village</a></li>
+<li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Monaco+Monte+Carlo">Google Maps｜摩纳哥 Monaco / Monte Carlo</a></li>
+<li>📕 <a href="https://www.rednote.com/discovery/item/6a477b2d0000000017008c4e">小红书｜DJQueen：南法尼斯周边休闲4日游，4张图秒看懂</a> <span class="muted small">（已读正文：包含埃兹 + 摩纳哥组合，作者也承认整体安排略赶）</span></li>
+</ul>
+</div>
+</div>
+
+<div class="opt-card" id="opt-c">
+<img src="assets/photos/villa-ephrussi.jpg" alt="罗斯柴尔德别墅花园 Villa Ephrussi de Rothschild" loading="lazy" title="罗斯柴尔德别墅花园 Villa Ephrussi de Rothschild · 📷 Berthold Werner · CC BY-SA 3.0 · Wikimedia Commons">
+<div class="opt-body">
+<h4>C｜自由城 + 费拉角 Villefranche-sur-Mer &amp; Saint-Jean-Cap-Ferrat</h4>
+<p class="opt-en">Colourful Harbour, Villa &amp; Coastal Walk</p>
+<p><span class="tag glance">一天</span><span class="tag walk">轻松至中等</span><span class="tag pick">重点讨论</span></p>
+<p class="opt-focus"><strong>当天重点</strong>：海湾、漂亮花园与一顿舒服的午餐。自由城老港闲逛和午餐，下午看罗斯柴尔德别墅花园（Villa Ephrussi de Rothschild），有余力再走一小段费拉角海岸。</p>
+<ul>
+<li>适合：海景、花园、建筑、拍照。</li>
+<li>取舍：凯里洛斯别墅（Villa Kérylos）作为替换项，不默认再加一个馆。</li>
+<li>现在草稿：<a href="#d7">D7 10/16 周五</a>。</li>
+</ul>
+<p class="opt-when">📅 <strong>这几天要注意</strong>：从尼斯坐 TER 只要 6–7 分钟；罗斯柴尔德别墅到 11/1 前每天 10:00–18:00，€18，建议网上买票；老港海鲜 La Mère Germaine 周三至周日营业，露台位提前约一周订。</p>
+<ul class="opt-links">
+<li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Villefranche-sur-Mer+France">Google Maps｜滨海自由城 Villefranche-sur-Mer</a></li>
+<li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Villa+Ephrussi+de+Rothschild">Google Maps｜罗斯柴尔德别墅 Villa Ephrussi de Rothschild</a></li>
+<li class="muted small">暂无已核对的对应小红书帖子；这组来自现有行程，保留为重点候选。</li>
+</ul>
+</div>
+</div>
+
+<div class="opt-card" id="opt-d">
+<img src="assets/photos/menton.jpg" alt="芒通 Menton" loading="lazy" title="芒通 Menton · 📷 Le poulpe ambidextre · CC BY-SA 4.0 · Wikimedia Commons">
+<div class="opt-body">
+<h4>D｜芒通 Menton</h4>
+<p class="opt-en">Colourful Old Town &amp; Slow Seaside Day</p>
+<p><span class="tag glance">半天–一天</span><span class="tag walk">轻松</span></p>
+<p class="opt-focus"><strong>当天重点</strong>：把时间完整留给一个海边小镇。老城、教堂周边、港口和海边，穿插咖啡、午餐与小店，不强制进博物馆。</p>
+<ul>
+<li>适合：彩色老城、拍照、慢逛；留整天更自在。</li>
+<li>和 C 的区别：D 更集中在老城与街巷，C 更偏海湾、别墅和花园。时间短可以二选一。</li>
+</ul>
+<p class="opt-when">📅 <strong>这几天要注意</strong>：从尼斯坐 TER 约 35 分钟，是沿海最东边的柠檬小镇；让·科克托博物馆（Musée Jean Cocteau）周二闭（这几天都开）。</p>
+<ul class="opt-links">
+<li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Menton+France">Google Maps｜芒通 Menton</a></li>
+<li>📕 <a href="https://www.rednote.com/discovery/item/6a477b2d0000000017008c4e">小红书｜DJQueen 四日游：包含芒通一日</a> <span class="muted small">（已读正文）</span></li>
+<li>📕 <a href="https://www.rednote.com/discovery/item/6aa95712000000000d025ef6">小红书参考帖｜埃兹➕芒通一日游攻略</a> <span class="muted small">（只核对过标题；是另一种组合思路，不建议把芒通追加到已有的埃兹 + 摩纳哥那天）</span></li>
+</ul>
+</div>
+</div>
+
+<div class="opt-card" id="opt-e">
+<img src="assets/photos/antibes.jpg" alt="昂蒂布老城 Vieil Antibes" loading="lazy" title="昂蒂布老城 Vieil Antibes · 📷 Gilbert Bochenek · CC BY 3.0 · Wikimedia Commons">
+<div class="opt-body">
+<h4>E｜昂蒂布 Antibes</h4>
+<p class="opt-en">Market, Old Town &amp; Picasso</p>
+<p><span class="tag glance">半天–一天</span><span class="tag walk">轻松至中等</span></p>
+<p class="opt-focus"><strong>当天重点</strong>：有生活感的海边老城，配一点艺术。普罗旺斯市场（Marché Provençal）、老城、城墙和海边；喜欢艺术就加入毕加索博物馆（Musée Picasso）。</p>
+<ul>
+<li>适合：市场、吃喝、老城、艺术。</li>
+<li>取舍：认真看馆就少排跨城行程，不默认再接完整的 <a href="#opt-f">F</a>。</li>
+<li>现在草稿：<a href="#d8">D8 10/17 上午</a>（下午接 F）。</li>
+</ul>
+<p class="opt-when">📅 <strong>这几天要注意</strong>：从尼斯坐 TER 约 15–25 分钟；市场 9–5 月周二至周日 7:30–13:00；毕加索博物馆 10:00–12:00、14:00–18:00，中午闭馆、周一闭，€12，先看馆再逛市场。</p>
+<ul class="opt-links">
+<li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Antibes+France">Google Maps｜昂蒂布 Antibes</a></li>
+<li>📕 <a href="https://www.rednote.com/discovery/item/6a477b2d0000000017008c4e">小红书｜DJQueen 四日游：包含昂蒂布 + 戛纳</a> <span class="muted small">（已读正文）</span></li>
+<li>📕 <a href="https://www.rednote.com/discovery/item/6a9279d3000000002a03205d">小红书参考帖｜昂蒂布：南法最美5KM</a> <span class="muted small">（只核对过标题；还没读到具体路线，不把 5KM 直接当成规划好的步道）</span></li>
+</ul>
+</div>
+</div>
+
+<div class="opt-card" id="opt-f">
+<img src="assets/photos/saint-paul.jpg" alt="圣保罗德旺斯 Saint-Paul-de-Vence" loading="lazy" title="圣保罗德旺斯 Saint-Paul-de-Vence · 📷 Dennis G. Jarvis · CC BY-SA 2.0 · Wikimedia Commons">
+<div class="opt-body">
+<h4>F｜圣保罗德旺斯 Saint-Paul-de-Vence ⭐</h4>
+<p class="opt-en">Medieval Art Village &amp; Optional Fondation Maeght</p>
+<p><span class="tag glance">半天–一天</span><span class="tag walk">轻松</span><span class="tag mustgo">朋友推荐</span><span class="tag pick">重点讨论</span></p>
+<p class="opt-focus"><strong>当天重点</strong>：朋友推荐的山城本身。石头巷子、城墙、画廊和小店，留时间坐下来吃饭或喝咖啡。</p>
+<ul>
+<li>适合：山城氛围、艺术小店、建筑与慢逛。</li>
+<li>可选：玛格基金会（Fondation Maeght），喜欢现代艺术、雕塑和建筑再加入；不需要为了「去过圣保罗」就强制进美术馆。</li>
+<li>注意：圣保罗德旺斯（Saint-Paul-de-Vence）和附近的旺斯（Vence）是两个地方。</li>
+<li>现在草稿：<a href="#d8">D8 10/17 下午</a>（半天）。建议提高优先级。</li>
+</ul>
+<p class="opt-when">📅 <strong>这几天要注意</strong>：从尼斯没有直达车，先坐 TER 到卡涅（Cagnes-sur-Mer）再换 ZOU! 655 路，单程约 1 小时 10 分；平日约 30 分钟一班，周末约 40–50 分钟一班（2024-06 版时刻表，出发前复核）。<strong>10/17 周六是法国万圣节假期第一天</strong>，山城人多，想清静就放 10/15 或 10/16。玛格基金会每天 10:00–18:00，€18，不用预约。村口的 La Colombe d&#x27;Or 是挂满毕加索、马蒂斯作品的老餐厅，10 月底才关门，午餐 12:00–14:30，电话 +33 4 93 32 80 02 订位。</p>
+<ul class="opt-links">
+<li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Saint-Paul-de-Vence+France">Google Maps｜圣保罗德旺斯 Saint-Paul-de-Vence</a></li>
+<li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Fondation+Maeght">Google Maps｜玛格基金会 Fondation Maeght</a></li>
+<li>📕 <a href="https://www.rednote.com/discovery/item/6aab7479000000002901ba54">小红书参考帖｜南法生活：一个月后的，圣保罗德旺斯小镇</a> <span class="muted small">（只核对过标题）</span></li>
+</ul>
+</div>
+</div>
+
+<div class="opt-card" id="opt-g">
+<div class="opt-body">
+<h4>G｜戛纳 Cannes</h4>
+<p class="opt-en">Cinema &amp; Shopping, or an Island Escape</p>
+<p><span class="tag glance">半天–一天</span></p>
+<p class="opt-focus"><strong>两种玩法选一个重点</strong>，不是两份完整行程都做。</p>
+<ul>
+<li><strong>G1｜城市版</strong>：电影节宫（Palais des Festivals）周边、海滨大道、Le Suquet 老城、购物与咖啡。适合喜欢电影、购物、海滨城市；半天至一天。</li>
+<li><strong>G2｜海岛版</strong>：从戛纳坐船去圣玛格丽特岛（Île Sainte-Marguerite），以岛上散步和自然风景为主，市区只轻量逛。适合想要「坐船 + 岛上散步」；留完整一天。</li>
+</ul>
+<p class="opt-when">📅 <strong>这几天要注意</strong>：从尼斯坐 TER 约 35 分钟。<strong>戛纳秋季电视节（MIPCOM）10/12–10/15</strong>，电影节宫一带人多，G1 最好放 10/16 之后。G2 的 Horizon 渡船从戛纳老港 Quai Laubeuf 出发，船程 15 分钟，全年每天开；淡季大约每小时一班，最后一班回程约 17:00，往返 €12.50 起；风浪大会停航，出发前查时刻表。</p>
+<ul class="opt-links">
+<li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Cannes+France">Google Maps｜戛纳 Cannes</a></li>
+<li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Ile+Sainte-Marguerite+Cannes">Google Maps｜圣玛格丽特岛 Île Sainte-Marguerite</a></li>
+<li>📕 <a href="https://www.rednote.com/discovery/item/6a477b2d0000000017008c4e">小红书｜DJQueen 四日游：戛纳市区组合参考</a> <span class="muted small">（已读正文；G2 暂无已核对的小红书帖子）</span></li>
+<li>⛴️ <a href="https://booking.cannes-destination.com/il4-offer_i75-horizon-ferry-to-sainte-marguerite-island-from-cannes.aspx">戛纳旅游局｜圣玛格丽特岛渡船介绍</a></li>
+<li>⛴️ <a href="https://www.horizon-lerins.com/en/horaires/">Horizon 渡船｜官方时刻表</a></li>
+</ul>
+</div>
+</div>
+
+<div class="opt-card" id="opt-h">
+<img src="assets/photos/chagall.jpg" alt="夏加尔美术馆 Musée Marc Chagall" loading="lazy" title="夏加尔美术馆 Musée Marc Chagall · 📷 Europe22 · CC BY-SA 3.0 · Wikimedia Commons">
+<div class="opt-body">
+<h4>H｜尼斯艺术日 Nice Art Day</h4>
+<p class="opt-en">Chagall, Matisse &amp; Cimiez</p>
+<p><span class="tag glance">半天–一天</span><span class="tag walk">轻松</span><span class="tag risk">雨天备选</span></p>
+<p class="opt-focus"><strong>当天重点</strong>：室内艺术，减少跨城交通。夏加尔美术馆（Musée Marc Chagall）与马蒂斯美术馆（Musée Matisse）按兴趣选一座或两座，天气允许再逛西米耶（Cimiez）周边。</p>
+<ul>
+<li>适合：艺术爱好者，也可以当雨天替换方案。</li>
+<li>取舍：和 <a href="#opt-f">F</a> 都偏艺术，不想连续逛馆就只选一组。</li>
+</ul>
+<p class="opt-when">📅 <strong>这几天要注意</strong>：两家都在西米耶山上，周二闭馆（这几天都开）；夏加尔美术馆 13:00–14:30 午休（到 10/31），€10–12；马蒂斯美术馆 €12，尼斯市立博物馆 4 日通票 €15。</p>
+<ul class="opt-links">
+<li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Musee+National+Marc+Chagall+Nice">Google Maps｜夏加尔美术馆 Musée National Marc Chagall</a></li>
+<li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Musee+Matisse+Nice">Google Maps｜马蒂斯美术馆 Musée Matisse</a></li>
+<li class="muted small">暂无已核对的对应小红书帖子。</li>
+</ul>
+</div>
+</div>
+
+<div class="opt-card" id="opt-i">
+<div class="opt-body">
+<h4>I｜格拉斯 Grasse</h4>
+<p class="opt-en">Perfume, Old Town &amp; a Hands-on Experience</p>
+<p><span class="tag deep">一天</span></p>
+<p class="opt-focus"><strong>当天重点</strong>：换成嗅觉与手作体验，不继续堆海景。香水老城、国际香水博物馆（Musée International de la Parfumerie）；有兴趣可以提前预约调香体验。</p>
+<ul>
+<li>适合：喜欢香水、想一起做体验的人。</li>
+<li>取舍：兴趣不大就跳过，不必为「香水之都」的名气专程去。</li>
+</ul>
+<p class="opt-when">📅 <strong>这几天要注意</strong>：从尼斯坐 TER 约 1 小时 10 分；火车站在山下，到老城要走约 15 分钟上坡，或者换公交。国际香水博物馆 9–6 月每天 10:00–18:00，€6。调香体验（Galimard、Molinard、Fragonard）大多要提前预约；Fragonard 的完整调香课不在老城里，离老城约 3 km。</p>
+<ul class="opt-links">
+<li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Grasse+France">Google Maps｜格拉斯 Grasse</a></li>
+<li>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Musee+International+de+la+Parfumerie+Grasse">Google Maps｜国际香水博物馆 International Perfume Museum</a></li>
+<li>🌐 <a href="https://cotedazurfrance.fr/decouvrir/les-villes-de-la-cote-dazur/visiter-le-pays-de-grasse/visitez-le-musee-international-de-la-parfumerie/">官方旅游局｜香水博物馆介绍</a></li>
+<li class="muted small">暂无已核对的小红书帖子。</li>
+</ul>
+</div>
+</div>
+
+</div>
+<h4 id="riviera-pick">怎么选？</h4>
+<p><strong>先重点讨论 A、B、C、F</strong>：尼斯本城、埃兹 + 摩纳哥、海湾花园，以及朋友推荐的圣保罗德旺斯。再按兴趣加：</p>
+<ul>
+<li>彩色老城与海边慢逛 → <a href="#opt-d">D 芒通</a></li>
+<li>市场、美食与毕加索 → <a href="#opt-e">E 昂蒂布</a></li>
+<li>电影、购物 → <a href="#opt-g">G1 戛纳城市版</a>；坐船与海岛 → <a href="#opt-g">G2 圣玛格丽特岛</a></li>
+<li>艺术 / 雨天替换 → <a href="#opt-h">H 尼斯艺术日</a></li>
+<li>香水与调香体验 → <a href="#opt-i">I 格拉斯</a></li>
+</ul>
+<p>这是菜单，不是任务清单。最后按真正可用的整天与半天来选；天气不好时换选项，也比每天硬赶原计划更舒服。下面是几种排法，供讨论时参考：</p>
+<div class="tw"><table class="fixed">
+<colgroup><col style="width:16%"><col style="width:28%"><col style="width:28%"><col style="width:28%"></colgroup>
+<thead>
+<tr>
+<th>日期</th>
+<th>经典版（现在的草稿）</th>
+<th>圣保罗慢逛版</th>
+<th>下雨 / 想轻松</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10/14 周三下午</td>
+<td><a href="#opt-a">A</a> 尼斯本城</td>
+<td><a href="#opt-a">A</a> 尼斯本城</td>
+<td><a href="#opt-a">A</a> 尼斯本城</td>
+</tr>
+<tr>
+<td>10/15 周四</td>
+<td><a href="#opt-b">B</a> 埃兹 + 摩纳哥（亲王宫最后一天）</td>
+<td><a href="#opt-b">B</a> 埃兹 + 摩纳哥</td>
+<td><a href="#opt-b">B</a> 埃兹 + 摩纳哥</td>
+</tr>
+<tr>
+<td>10/16 周五</td>
+<td><a href="#opt-c">C</a> 自由城 + 费拉角</td>
+<td><a href="#opt-f">F</a> 圣保罗德旺斯整天（工作日人少，中午 La Colombe d&#x27;Or）</td>
+<td><a href="#opt-h">H</a> 尼斯艺术日（室内）</td>
+</tr>
+<tr>
+<td>10/17 周六</td>
+<td><a href="#opt-e">E</a> 昂蒂布 + <a href="#opt-f">F</a> 圣保罗（各半天）</td>
+<td><a href="#opt-c">C</a> 自由城 + 费拉角，或 <a href="#opt-d">D</a> 芒通</td>
+<td><a href="#opt-f">F</a> 或 <a href="#opt-c">C</a>，看哪天天气好</td>
+</tr>
+<tr>
+<td>10/18 周日上午</td>
+<td>萨莱雅周日花市、海边早餐（看航班）</td>
+<td>同左</td>
+<td>同左</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="riviera-other">另外保留：需要换基地的南法备选</h4>
+<p>下面这些先不混进 A–I：离尼斯太远，当天往返不划算，更适合多留几天、换住宿基地，或者改成另一套路线。</p>
+<ul>
+<li>🌊 <strong>卡西与卡朗格海岸 Cassis &amp; Calanques</strong>：重点是港口、海岸与自然风景。<br>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Cassis+France">Google Maps｜Cassis</a> · 📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Parc+national+des+Calanques">Google Maps｜Calanques National Park</a> · 📕 <a href="https://www.rednote.com/discovery/item/6838c6fe0000000021005f6a">小红书参考帖｜南法 cassis小镇详细攻略</a></li>
+<li>🏘️ <strong>耶尔 Hyères</strong>：另一种南法老城体验，不建议为了补一个小镇从尼斯长途折返。<br>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Hyeres+France">Google Maps｜Hyères</a> · 📕 <a href="https://www.rednote.com/discovery/item/6aab9130000000002a02f4b3">小红书参考帖｜地中海光线：南法老城耶尔</a></li>
+<li>🌿 <strong>普罗旺斯山城 Provence Villages</strong>：戈尔德（Gordes）、鲁西永（Roussillon）、泉水小镇（Fontaine-de-Vaucluse）等，适合独立的普罗旺斯路线；页面里已经有<a href="#plan-b">备选 B：普罗旺斯自驾</a>，不必再塞进尼斯主方案。<br>📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Gordes+France">Google Maps｜戈尔德 Gordes</a> · 📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Roussillon+Vaucluse+France">Google Maps｜鲁西永 Roussillon</a> · 📍 <a href="https://www.google.com/maps/search/?api=1&amp;query=Fontaine-de-Vaucluse+France">Google Maps｜泉水小镇 Fontaine-de-Vaucluse</a> · 📕 <a href="https://www.rednote.com/discovery/item/6aa1c5c3000000002a0052e3">小红书参考帖｜南法小镇：红土城 + 石头城 + 泉水小镇一日游</a></li>
+</ul>
 <section class="day-block" id="d5">
 <h3>D5 · 10/14 周三：巴黎 → 尼斯 / 老城 Vieux Nice / 萨莱雅市集 Cours Saleya / 城堡山 Colline du Château 日落</h3>
 <p class="day-lead">上午从巴黎去尼斯，TGV 高铁和飞机二选一，中午前后到。下午不走远，把尼斯老城（Vieux Nice）、萨莱雅花市（Cours Saleya）和城堡山（Colline du Château）日落串成一条步行线。</p>
