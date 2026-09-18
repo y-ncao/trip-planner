@@ -121,15 +121,26 @@ code{background:transparent;padding:0;border-radius:0;font:inherit;}
 .small{font-size:12px;}
 hr{border:none;border-top:1px solid var(--line);margin:24px 0;}
 @media(min-width:1180px){.wrap{margin-left:270px;margin-right:20px;}}
-@media(max-width:1179px){.doc-nav{position:static;width:auto;max-height:none;border-right:none;border-bottom:1px solid var(--line);}.doc-nav a{display:inline-block;margin-right:4px;}.doc-nav .nav-sub{padding-left:6px;}.doc-nav .nav-divider{display:none;}.wrap{margin:0 auto;}}
+.doc-nav a.active{background:var(--accent-soft);color:var(--accent);font-weight:700;}
+.nav-toggle,.nav-close,.nav-backdrop{display:none;}
+@media(max-width:1179px){
+.wrap{margin:0 auto;}
+.doc-nav{z-index:1100;width:min(86vw,320px);padding:14px 12px 40px;font-size:14px;box-shadow:4px 0 24px rgba(31,35,40,.18);overscroll-behavior:contain;-webkit-overflow-scrolling:touch;transform:translateX(-105%);visibility:hidden;transition:transform .22s ease,visibility 0s linear .22s;}
+body.nav-open .doc-nav{transform:none;visibility:visible;transition:transform .22s ease;}
+body.nav-open{overflow:hidden;}
+.doc-nav-title{margin:2px 40px 8px 6px;font-size:15px;}
+.doc-nav a{padding:8px 8px;}
+.doc-nav .nav-trip{font-size:13px;}
+.doc-nav .nav-sub{padding-left:18px;font-size:13px;}
+.nav-close{display:flex;position:absolute;top:8px;right:8px;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#334155;font-size:18px;line-height:1;cursor:pointer;}
+.nav-backdrop{position:fixed;inset:0;z-index:1050;background:rgba(15,23,42,.38);}
+body.nav-open .nav-backdrop{display:block;}
+.nav-toggle{display:flex;position:fixed;left:12px;bottom:12px;z-index:900;align-items:center;gap:6px;height:42px;padding:0 16px;border:1px solid rgba(31,35,40,.18);border-radius:999px;background:rgba(31,63,110,.94);color:#fff;font-family:inherit;font-size:14px;font-weight:600;line-height:1;box-shadow:0 10px 28px rgba(31,35,40,.22);cursor:pointer;}
+.nav-toggle span{font-size:17px;}
+}
 @media(max-width:760px){
 body{background:#fff;}
 .wrap{padding:14px 10px 88px;}
-.doc-nav{position:sticky;top:0;z-index:700;display:flex;gap:6px;overflow-x:auto;padding:8px 10px;background:rgba(255,255,255,.96);box-shadow:0 2px 10px rgba(31,35,40,.08);white-space:nowrap;-webkit-overflow-scrolling:touch;}
-.doc-nav-title{display:none;}
-.doc-nav a{flex:0 0 auto;margin:0;padding:5px 9px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:12px;}
-.doc-nav .nav-section{margin-top:0;font-weight:600;}
-.doc-nav .nav-sub{padding-left:9px;}
 h1{font-size:23px;line-height:1.25;margin-top:10px;}
 h2{font-size:19px;margin-top:28px;}
 h3{font-size:16px;}
@@ -168,8 +179,9 @@ td img.big,p img.big{max-width:100%;max-height:190px;}
 .day-map{height:260px;}
 .back-to-top{right:12px;bottom:12px;width:42px;height:42px;font-size:19px;}
 }
-@media(max-width:420px){.wrap{padding-left:8px;padding-right:8px;}table{font-size:12px;}.doc-nav a{font-size:11px;padding:5px 8px;}}
-</style></head><body><nav class="doc-nav" aria-label="文档导航">
+@media(max-width:420px){.wrap{padding-left:8px;padding-right:8px;}table{font-size:12px;}}
+</style></head><body><nav class="doc-nav" id="doc-nav" aria-label="文档导航">
+<button class="nav-close" type="button" aria-label="关闭目录">✕</button>
 <p class="doc-nav-title">Trip Planner</p>
 <a class="nav-trip current" href="#top">● 2026-10 巴黎 + 南法（当前）</a>
 <a class="nav-trip" href="archive/tokyo-2026/">2026 东京（已归档）</a>
@@ -207,7 +219,7 @@ td img.big,p img.big{max-width:100%;max-height:190px;}
 <a class="nav-section" href="#practical">7. 出发前准备</a>
 <a class="nav-sub" href="#checklist">清单（按日期）</a>
 <a class="nav-section" href="#archive">8. 归档</a>
-</nav><a class="back-to-top" href="#top" aria-label="回到顶部" title="回到顶部">↑</a><div class="wrap">
+</nav><div class="nav-backdrop" aria-hidden="true"></div><button class="nav-toggle" type="button" aria-controls="doc-nav" aria-expanded="false"><span aria-hidden="true">☰</span>目录</button><a class="back-to-top" href="#top" aria-label="回到顶部" title="回到顶部">↑</a><div class="wrap">
 <h1 id="top">2026-10 巴黎 + 南法 生日旅行（建议稿）</h1>
 <p>生成日期：2026-09-10<br>
 当前状态：<strong>行程建议稿</strong>，日期定为 10/10–10/18，机票、酒店都还没订。</p>
@@ -5870,6 +5882,80 @@ td img.big,p img.big{max-width:100%;max-height:190px;}
 </tbody>
 </table></div>
 </div><script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script><script>
+(() => {
+  const nav = document.getElementById("doc-nav");
+  const toggle = document.querySelector(".nav-toggle");
+  const closeBtn = nav.querySelector(".nav-close");
+  const backdrop = document.querySelector(".nav-backdrop");
+  const drawer = window.matchMedia("(max-width: 1179px)");
+
+  const setOpen = open => {
+    document.body.classList.toggle("nav-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    if (open) {
+      const current = nav.querySelector("a.active");
+      if (current) current.scrollIntoView({block: "center"});
+      closeBtn.focus({preventScroll: true});
+    }
+  };
+  toggle.addEventListener("click", () => setOpen(!document.body.classList.contains("nav-open")));
+  closeBtn.addEventListener("click", () => { setOpen(false); toggle.focus({preventScroll: true}); });
+  backdrop.addEventListener("click", () => setOpen(false));
+  document.addEventListener("keydown", e => { if (e.key === "Escape") setOpen(false); });
+  drawer.addEventListener("change", () => setOpen(false));
+
+  // In-page jumps: lazy images above the target load during the jump and push it down,
+  // so jump instantly and keep the target pinned to the top until the page settles.
+  let pinned = null, pinnedUntil = 0;
+  const root = document.documentElement;
+  const keepPinned = () => {
+    if (!pinned) return;
+    if (performance.now() > pinnedUntil) { pinned = null; root.style.scrollBehavior = ""; return; }
+    const offset = pinned.getBoundingClientRect().top;
+    if (Math.abs(offset) > 2) window.scrollBy(0, offset);
+    requestAnimationFrame(keepPinned);
+  };
+  const jumpTo = target => {
+    root.style.scrollBehavior = "auto";
+    target.scrollIntoView({block: "start"});
+    pinned = target;
+    pinnedUntil = performance.now() + 2500;
+    requestAnimationFrame(keepPinned);
+  };
+  ["touchstart", "wheel", "keydown", "mousedown"].forEach(type =>
+    window.addEventListener(type, () => { pinned = null; root.style.scrollBehavior = ""; }, {passive: true}));
+  document.addEventListener("click", e => {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    const id = decodeURIComponent(link.getAttribute("href").slice(1));
+    const target = id && document.getElementById(id);
+    if (!target) return;
+    e.preventDefault();
+    if (nav.contains(link) && drawer.matches) setOpen(false);
+    history.pushState(null, "", "#" + id);
+    jumpTo(target);
+  });
+  if (location.hash.length > 1) {
+    const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (target) window.addEventListener("load", () => jumpTo(target), {once: true});
+  }
+
+  const pairs = Array.from(nav.querySelectorAll('a[href^="#"]:not(.nav-trip)'))
+    .map(link => [document.getElementById(decodeURIComponent(link.getAttribute("href").slice(1))), link])
+    .filter(([target]) => target);
+  let ticking = false;
+  const markCurrent = () => {
+    ticking = false;
+    let current = null;
+    for (const [target, link] of pairs) {
+      if (target.getBoundingClientRect().top <= 90) current = link; else break;
+    }
+    pairs.forEach(([, link]) => link.classList.toggle("active", link === current));
+  };
+  window.addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(markCurrent); } }, {passive: true});
+  markCurrent();
+})();
+
 (() => {
   document.querySelectorAll(".tw table").forEach(table => {
     const headers = Array.from(table.tHead?.rows[0]?.cells || []).map(cell => cell.textContent.trim());
