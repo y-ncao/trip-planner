@@ -116,6 +116,20 @@ code{background:transparent;padding:0;border-radius:0;font:inherit;}
 .opt-when{margin:8px 0 6px!important;padding:6px 8px;border:1px solid #ffe58f;border-radius:6px;background:#fffbe6;font-size:12px;line-height:1.6;}
 .opt-body ul.opt-links{margin:8px 0 0;padding:8px 0 0;border-top:1px dashed var(--line);list-style:none;}
 .opt-links li{margin:3px 0;}
+.day-map.riviera-map{height:440px;}
+.opt-pin{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border:2px solid #fff;border-radius:999px;color:#fff;font:700 13px/1 system-ui,sans-serif;box-shadow:0 2px 6px rgba(0,0,0,.35);}
+.g-nice{background:#1f3f6e;} .g-east{background:#1a5fb4;} .g-west{background:#c2410c;}
+.leaflet-tooltip.opt-label{padding:1px 6px;border:1px solid #cbd5e1;border-radius:6px;background:rgba(255,255,255,.93);color:#1f2328;font-size:11px;font-weight:600;box-shadow:none;}
+.leaflet-tooltip.route-time{padding:0 5px;border:0;border-radius:4px;background:rgba(255,255,255,.88);color:#334155;font-size:10px;box-shadow:none;}
+.leaflet-tooltip.opt-label:before,.leaflet-tooltip.route-time:before{display:none;}
+.riviera-map.labels-off .leaflet-tooltip.opt-label,.riviera-map.labels-off .leaflet-tooltip.route-time{display:none;}
+.opt-legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:4px 16px;margin:8px 0 0;padding:0;list-style:none;font-size:12px;}
+.opt-legend li{margin:0;}
+.day-map-card .opt-legend strong{display:inline;margin:0;color:inherit;}
+.opt-chip{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;margin-right:6px;border-radius:999px;color:#fff!important;font-weight:700;font-size:11px;text-decoration:none!important;vertical-align:1px;}
+.map-legend i.line{width:16px;height:3px;border-radius:2px;vertical-align:3px;}
+.map-legend i.line.dash{background:repeating-linear-gradient(90deg,#64748b 0 4px,transparent 4px 7px);}
+@media(max-width:760px){.day-map.riviera-map{height:360px;}}
 .map-fallback{margin:0;padding:14px;color:var(--muted);font-size:13px;}
 .muted{color:var(--muted);}
 .small{font-size:12px;}
@@ -1444,6 +1458,23 @@ td img.big,p img.big{max-width:100%;max-height:190px;}
 <li>下面的 <a href="#d5">D5</a>–<a href="#d10">D10</a> 是目前的默认草稿：D5 下午 ≈ A，D6 ≈ C，D7 ≈ B，D8 ≈ F 整天，D9 ≈ E（下午可以接 H）。哪天想换，直接从菜单里挑一张卡片替换；天气不好就换 H 或 A。</li>
 <li>菜单由 Hermes 从小红书等参考帖整理（9/18）；每张卡片里「📅 这几天要注意」是按我们 10/13–10/18 的日期补充的。<strong>小红书链接要在 App 里或登录后打开</strong>（未登录时 8 个里有 7 个显示「安全限制」）；标「参考帖」的只核对过标题，DJQueen 四日游读过正文。</li>
 </ul>
+</div>
+<div class="day-map-grid">
+<figure class="day-map-card wide">
+<div class="day-map riviera-map" id="riviera-map" role="img" aria-label="南法一日游选项 A–I 地图"></div>
+<figcaption><strong>A–I 在地图上的位置（尼斯为基地）</strong>蓝色是往摩纳哥、芒通的东线，橙色是往昂蒂布、戛纳的西线，线上标着火车、公交或渡船要多久。点字母能看简介，也能跳到下面的卡片或在 Google Maps 打开；地图放大后会显示地名。<span class="map-legend"><span><i class="g-nice"></i>尼斯本城</span><span><i class="g-east"></i>东线选项</span><span><i class="g-west"></i>西线选项</span><span><i class="line g-east"></i>东线火车</span><span><i class="line g-west"></i>西线火车</span><span><i class="line dash"></i>公交 / 渡船</span></span>
+<ul class="opt-legend">
+<li><a class="opt-chip g-nice" href="#opt-a">A</a><strong>尼斯本城</strong>：住在这里，走路就到</li>
+<li><a class="opt-chip g-east" href="#opt-b">B</a><strong>埃兹 + 摩纳哥</strong>：埃兹村坐 82 / 602 路公交 20–30 分钟；摩纳哥坐火车约 20 分钟</li>
+<li><a class="opt-chip g-east" href="#opt-c">C</a><strong>自由城 + 费拉角</strong>：火车 6–7 分钟；别墅换 15 路公交</li>
+<li><a class="opt-chip g-east" href="#opt-d">D</a><strong>芒通</strong>：火车约 35 分钟（从摩纳哥过去 11 分钟）</li>
+<li><a class="opt-chip g-west" href="#opt-e">E</a><strong>昂蒂布</strong>：火车 15–25 分钟</li>
+<li><a class="opt-chip g-west" href="#opt-f">F</a><strong>圣保罗德旺斯</strong>：火车到卡涅，再换 655 路公交，约 1 小时 10 分</li>
+<li><a class="opt-chip g-west" href="#opt-g">G</a><strong>戛纳 + 圣玛格丽特岛</strong>：火车约 35 分钟，上岛再坐船 15 分钟</li>
+<li><a class="opt-chip g-nice" href="#opt-h">H</a><strong>尼斯艺术日</strong>：西米耶（Cimiez）山上，坐市区公交</li>
+<li><a class="opt-chip g-west" href="#opt-i">I</a><strong>格拉斯</strong>：火车约 1 小时 10 分（从戛纳过去 24 分钟）</li>
+</ul></figcaption>
+</figure>
 </div>
 <div class="opt-grid">
 
@@ -6665,6 +6696,87 @@ td img.big,p img.big{max-width:100%;max-height:190px;}
     pending.forEach(item => observer.observe(item.mapEl));
   } else {
     pending.forEach(initMap);
+  }
+})();
+
+(() => {
+  // 南法一日游菜单的总览地图：A–I 选项的位置 + 东线 / 西线火车、公交和渡船
+  const el = document.getElementById("riviera-map");
+  if (!el) return;
+  const gm = q => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+  const spots = [
+    {k: "A", g: "g-nice", at: [43.69676, 7.27692], label: "A 尼斯本城", dir: "left", title: "A｜尼斯本城", note: "老城、萨莱雅市集、城堡山日落；住在这里，走路就到。", q: "Vieux Nice"},
+    {k: "H", g: "g-nice", at: [43.71945, 7.27597], label: "H 西米耶美术馆", dir: "top", title: "H｜尼斯艺术日", note: "马蒂斯、夏加尔美术馆在西米耶山上，坐市区公交。", q: "Musée Matisse, Nice"},
+    {k: "C", g: "g-east", at: [43.70500, 7.31250], label: "C 自由城", dir: "top", title: "C｜自由城 + 费拉角", note: "滨海自由城：火车 6–7 分钟。", q: "Villefranche-sur-Mer"},
+    {k: "C", g: "g-east", at: [43.69660, 7.32850], label: "C 费拉角别墅", dir: "right", title: "C｜自由城 + 费拉角", note: "罗斯柴尔德别墅花园：从自由城或博利厄换 15 路公交。", q: "Villa Ephrussi de Rothschild"},
+    {k: "B", g: "g-east", at: [43.72978, 7.36189], label: "B 埃兹村", dir: "top", title: "B｜埃兹 + 摩纳哥", note: "埃兹村：从尼斯坐 82 / 602 路公交 20–30 分钟。", q: "Èze Village"},
+    {k: "B", g: "g-east", at: [43.73126, 7.41982], label: "B 摩纳哥", dir: "right", title: "B｜埃兹 + 摩纳哥", note: "摩纳哥：火车约 20 分钟；亲王宫国事厅开到 10/15。", q: "Palais Princier de Monaco"},
+    {k: "D", g: "g-east", at: [43.77691, 7.50711], label: "D 芒通", dir: "top", title: "D｜芒通", note: "火车约 35 分钟；从摩纳哥过去 11 分钟。", q: "Basilique Saint-Michel-Archange, Menton"},
+    {k: "E", g: "g-west", at: [43.58080, 7.12390], label: "E 昂蒂布", dir: "right", title: "E｜昂蒂布", note: "火车 15–25 分钟；毕加索博物馆中午闭馆、周一闭。", q: "Vieil Antibes"},
+    {k: "F", g: "g-west", at: [43.69800, 7.12200], label: "F 圣保罗德旺斯", dir: "top", title: "F｜圣保罗德旺斯", note: "火车到卡涅，再换 655 路公交，约 1 小时 10 分。", q: "Saint-Paul-de-Vence"},
+    {k: "G", g: "g-west", at: [43.55068, 7.01766], label: "G 戛纳", dir: "left", title: "G｜戛纳", note: "火车约 35 分钟；电影节宫、海滨大道、Le Suquet 老城。", q: "Palais des Festivals, Cannes"},
+    {k: "G", g: "g-west", at: [43.51945, 7.04932], label: "G 圣玛格丽特岛", dir: "bottom", title: "G｜圣玛格丽特岛", note: "从戛纳老港坐船 15 分钟，最后一班回程约 17:00。", q: "Île Sainte-Marguerite"},
+    {k: "I", g: "g-west", at: [43.65805, 6.92185], label: "I 格拉斯", dir: "top", title: "I｜格拉斯", note: "火车约 1 小时 10 分；从戛纳过去 24 分钟，下车后上坡进老城。", q: "Musée International de la Parfumerie, Grasse"},
+  ];
+  const st = {
+    nice: [43.70483, 7.26166], villefranche: [43.70751, 7.31362], beaulieu: [43.70679, 7.33164], eze: [43.72254, 7.35686],
+    monaco: [43.73826, 7.41950], menton: [43.77464, 7.49407], cagnes: [43.65891, 7.14785], antibes: [43.58564, 7.11944],
+    cannes: [43.55414, 7.01976], grasse: [43.65414, 6.92633]
+  };
+  const lines = [
+    {pts: [st.nice, st.villefranche, st.beaulieu, st.eze, st.monaco, st.menton], color: "#1a5fb4"},
+    {pts: [st.nice, st.cagnes, st.antibes, st.cannes], color: "#c2410c"},
+    {pts: [st.cannes, st.grasse], color: "#c2410c", weight: 3},
+    {pts: [st.nice, [43.72978, 7.36189]], color: "#64748b", dash: true},
+    {pts: [st.beaulieu, [43.69660, 7.32850]], color: "#64748b", dash: true},
+    {pts: [st.cagnes, [43.69800, 7.12200]], color: "#64748b", dash: true},
+    {pts: [[43.55068, 7.01766], [43.51945, 7.04932]], color: "#64748b", dash: true},
+  ];
+  const times = [
+    {a: st.monaco, b: st.menton, t: "火车 11 分"},
+    {a: st.antibes, b: st.cagnes, t: "火车约 10 分"},
+    {a: st.cagnes, b: [43.69800, 7.12200], t: "655 路约 25 分"},
+    {a: st.cannes, b: st.grasse, t: "火车 24 分"},
+    {a: [43.55068, 7.01766], b: [43.51945, 7.04932], t: "船 15 分"},
+  ];
+
+  const init = () => {
+    if (el.dataset.ready) return;
+    el.dataset.ready = "1";
+    if (!window.L) {
+      el.innerHTML = '<p class="map-fallback">地图库没有加载出来（可能离线）。下面的列表写了每个选项在哪、从尼斯过去要多久。</p>';
+      el.style.height = "auto";
+      return;
+    }
+    const map = L.map(el, {scrollWheelZoom: false});
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    lines.forEach(line => L.polyline(line.pts, {color: line.color, weight: line.weight || 4, opacity: line.dash ? 0.8 : 0.7,
+      dashArray: line.dash ? "5 6" : null}).addTo(map));
+    times.forEach(({a, b, t}) => L.tooltip({permanent: true, direction: "center", className: "route-time", interactive: false})
+      .setLatLng([(a[0] + b[0]) / 2, (a[1] + b[1]) / 2]).setContent(t).addTo(map));
+    spots.forEach(spot => {
+      const icon = L.divIcon({className: "map-pin-wrap", html: `<span class="opt-pin ${spot.g}">${spot.k}</span>`,
+        iconSize: [26, 26], iconAnchor: [13, 13], popupAnchor: [0, -13]});
+      L.marker(spot.at, {icon, title: spot.title}).addTo(map)
+        .bindTooltip(spot.label, {permanent: true, direction: spot.dir, className: "opt-label", offset: spot.dir === "left" ? [-12, 0] : spot.dir === "right" ? [12, 0] : spot.dir === "top" ? [0, -12] : [0, 12]})
+        .bindPopup(`<strong>${spot.title}</strong><br>${spot.note}<br><a href="#opt-${spot.k.toLowerCase()}">看菜单卡片</a> · <a href="${gm(spot.q)}" target="_blank" rel="noopener">Google Maps</a>`);
+    });
+    map.fitBounds(L.latLngBounds(spots.map(spot => spot.at)), {padding: [28, 28]});
+    const labels = () => el.classList.toggle("labels-off", map.getZoom() < 11 && el.clientWidth < 600);
+    map.on("zoomend", labels);
+    labels();
+  };
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting)) { observer.disconnect(); init(); }
+    }, {rootMargin: "300px 0px"});
+    observer.observe(el);
+  } else {
+    init();
   }
 })();
 </script></body></html>
