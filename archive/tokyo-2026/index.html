@@ -3993,7 +3993,7 @@ td img.big,p img.big{max-width:100%;max-height:190px;}
 
   const sectionNodes = (startId, endId) => {
     const start = document.getElementById(startId);
-    const end = document.getElementById(endId);
+    const end = endId ? document.getElementById(endId) : null;
     const nodes = [];
     for (let node = start ? start.nextSibling : null; node && node !== end; node = node.nextSibling) {
       nodes.push(node);
@@ -4042,7 +4042,7 @@ td img.big,p img.big{max-width:100%;max-height:190px;}
   [
     ...sectionNodes("3", "4-itinerary-proposal"),
     ...sectionNodes("5", "6-google-map-bookmarks-tokyo"),
-    ...sectionNodes("7", "8-archive")
+    ...sectionNodes("7")
   ]
     .forEach(node => {
       if (node.nodeType === Node.ELEMENT_NODE) linkDatesInNode(node);
