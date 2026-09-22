@@ -82,12 +82,16 @@ img{cursor:zoom-in;}
 /* food-list start */
 .food-list .rank{display:inline-block;min-width:1.4em;color:#64748b;font-weight:700;}
 .tw table.fixed.food-list{min-width:0;}
+.food-list{border:1px solid var(--line);}
+.food-list th,.food-list td{border-left:0;border-right:0;}
+.food-list tbody tr.info-row td{padding-top:10px;}
 .food-list tr.info-row td{border-bottom:0;}
 .food-list tr.info-row.no-pics td{border-bottom:1px solid var(--line);}
 .food-list tr.pics-row td{border-top:0;padding-top:2px;padding-bottom:10px;}
 .dish-pics{display:flex;gap:6px;}
 .tw table.fixed .dish-pics img,.dish-pics img{flex:0 0 calc((100% - 42px) / 8);width:calc((100% - 42px) / 8);min-width:0;max-width:none;max-height:none;margin:0;aspect-ratio:1/1;height:auto;object-fit:cover;border-radius:4px;cursor:zoom-in;}
 @media(max-width:760px){
+.tw table.food-list{border:0;}
 .tw table.food-list tr.info-row{border-bottom:0;border-radius:8px 8px 0 0;}
 .tw table.food-list tr.info-row.no-pics{border-bottom:1px solid var(--line);border-radius:8px;}
 .tw table.food-list tr.info-row td:last-child{border-bottom:1px solid #edf0f2;}
