@@ -277,10 +277,10 @@ td img.big,p img.big{max-width:100%;max-height:190px;}
 <li>营业时间、票价、订位规则、航班时刻都是 <strong>2026-09-10 的查询快照</strong>（卢浮宫（Louvre）、圣母院（Notre-Dame）9/18 又核对过一次），出发前再复核一次；表里写「未核实」的是官网没查到的。</li>
 </ul></div>
 <h2 id="weather">☀️ 天气 / 带什么衣服</h2>
-<p><strong>2026-10-08 重新查过，并且和三个独立来源对过账</strong>：Open-Meteo（ECMWF + ICON 混合）、yr.no（挪威气象局）、The Weather Channel（<strong>苹果自带天气 App 用的就是这家的数据</strong>）。上一版是 10/6 查的，两天里预报变了不少，下面是对完之后的版本。</p>
+<p><strong>2026-10-08 重新查过，并且和三个独立来源对过账</strong>：Open-Meteo（ECMWF + ICON 混合）、yr.no（挪威气象局）、The Weather Channel / IBM（<strong>苹果天气 App 列出的数据源之一</strong>，所以最接近你手机上看到的数字）。上一版是 10/6 查的，两天里预报变了不少，下面是对完之后的版本。</p>
 <div class="note-box"><p><strong>为什么和苹果天气对不上</strong></p><ul>
-<li><strong>预报自己变了。</strong>10/6 我写的「巴黎 10/12 早上 7°C」已经不成立，现在三家给的是 8 / 11 / 15°C，按小时看早上 7 点是 11°C。十天以外的预报本来就只能当个趋势。</li>
-<li><strong>各家模型本来就差 2–4°C，最低温差得最多。</strong>同一天尼斯的最低温，ECMWF 说 13.9°C、GFS 说 17.6°C；苹果（The Weather Channel）在蔚蓝海岸一贯比 Open-Meteo 高 1–2°C，所以你看手机会觉得「比他写的暖」。</li>
+<li><strong>预报自己变了。</strong>10/6 我写的「巴黎 10/12 早上 7°C」已经不成立，现在三家给的是 8 / 11 / 11°C，按小时看早上 7 点是 11°C。十天以外的预报本来就只能当个趋势。</li>
+<li><strong>各家模型本来就差 2–4°C，最低温差得最多。</strong>同一天尼斯的最低温，ECMWF 说 13.9°C、GFS 说 17.6°C；Weather Channel 在蔚蓝海岸的最低温一贯比 Open-Meteo 高 1–2°C、比 yr.no 高 3–4°C，所以你在手机上看会觉得「比他写的暖」。</li>
 <li><strong>最高温其实三家都对得上</strong>（差 1–2°C 以内）：巴黎 17–19°C、蔚蓝海岸 21–24°C。分歧集中在凌晨最低温，而那个点我们在睡觉——所以下面第二张表按<strong>真正要出门的时段</strong>列体感温度，那个才决定穿什么。</li>
 </ul></div>
 <h3 id="weather-daily">逐日：三家怎么说</h3>
@@ -302,7 +302,7 @@ td img.big,p img.big{max-width:100%;max-height:190px;}
 <td>飞机上（10/10 上午落地巴黎）</td>
 <td>10–17°C · 雨 35%</td>
 <td>9–17°C · 1 mm</td>
-<td>12–17°C · 雨 <strong>55%</strong></td>
+<td>8–17°C · 雨 48% · 1 mm</td>
 <td><strong>三家都说这天巴黎有雨</strong>，落地当天地面是湿的</td>
 </tr>
 <tr>
@@ -310,15 +310,15 @@ td img.big,p img.big{max-width:100%;max-height:190px;}
 <td>巴黎：玛黑区 → 奥赛 → 新桥</td>
 <td>12–17°C · 雨 35%</td>
 <td>11–17°C · 0.8 mm</td>
-<td>10–18°C · 雨 9%</td>
-<td><strong>10–18°C，还有雨尾巴</strong>；风 16–18 km/h，是巴黎段最大的</td>
+<td>12–18°C · 雨 <strong>55%</strong> · 0.5 mm</td>
+<td><strong>12–18°C。Weather Channel 把这天的逐小时雨概率峰值放到 55%</strong>，是巴黎段最可能挨淋的一天；风 16–19 km/h 也是最大的</td>
 </tr>
 <tr>
 <td>10/11 周日</td>
 <td>巴黎：卢浮宫 → 罗丹</td>
 <td>10–16°C · 雨 5%</td>
 <td>10–17°C · 0 mm</td>
-<td>11–17°C · 雨 24%</td>
+<td>10–17°C · 雨 10%</td>
 <td><strong>10–17°C</strong>，基本干</td>
 </tr>
 <tr>
@@ -326,15 +326,15 @@ td img.big,p img.big{max-width:100%;max-height:190px;}
 <td>巴黎：圣母院钟楼 → 圣日耳曼 → Bofinger</td>
 <td>11–18°C · 雨 15%</td>
 <td>8–19°C · 0 mm</td>
-<td>15–19°C · 雨 18%</td>
-<td><strong>11–19°C。最低温三家从 8 到 15 都有</strong>——但按小时看，早上 7 点是 11°C、体感 10°C</td>
+<td><strong>11–19°C</strong> · 雨 24%</td>
+<td><strong>11–19°C。Open-Meteo 和 Weather Channel 都给 11°C 的最低温，只有 yr.no 说 8°C</strong>；按小时看早上 7 点 11°C、体感 10°C</td>
 </tr>
 <tr>
 <td>10/13 周二 🎂</td>
 <td>尼斯 → 城堡山 → 自由城晚餐</td>
 <td>16–22°C · 雨 0%</td>
 <td>14–22°C · 0 mm</td>
-<td>17–23°C · 雨 4%</td>
+<td>17–23°C · 雨 5%</td>
 <td><strong>16–23°C，三家都说不下雨。</strong>19:00 自由城海边 20.6°C、体感 21.6°C、几乎无风</td>
 </tr>
 <tr>
@@ -350,15 +350,15 @@ td img.big,p img.big{max-width:100%;max-height:190px;}
 <td>埃兹 Èze（404 m）+ 摩纳哥</td>
 <td>埃兹 15–19°C</td>
 <td>（网格落在海边，不可用）</td>
-<td>埃兹 15–21°C · 雨 4%</td>
-<td><strong>埃兹 15–21°C，比海边低 2–3°C</strong>；摩纳哥 17–23°C</td>
+<td>埃兹 15–21°C · 雨 5%</td>
+<td><strong>埃兹 15–21°C，比海边低 2–3°C</strong>；摩纳哥 18–23°C。按 404 m 高度单独查的 yr.no 在 10/15 14:00 给 19.6°C、Weather Channel 给 20°C，两家对得上</td>
 </tr>
 <tr>
 <td>10/16 周五</td>
 <td>昂蒂布 + 圣保罗德旺斯</td>
 <td>14–20°C · 雨 10%</td>
 <td>13–19°C · 0.3 mm</td>
-<td>15–23°C · 雨 16%</td>
+<td>15–23°C · 雨 10%</td>
 <td><strong>14–23°C</strong>，最高温三家差 3°C，但都说基本不下雨</td>
 </tr>
 <tr>
@@ -366,15 +366,15 @@ td img.big,p img.big{max-width:100%;max-height:190px;}
 <td>机动日（尼斯 / 戛纳 / 格拉斯）</td>
 <td>16–24°C · 雨 14%</td>
 <td><strong>10–15°C · 21 mm</strong></td>
-<td>17–23°C · 雨 14%</td>
-<td><strong>分歧最大的一天</strong>：两家说 16–23°C 晴，yr.no 单独说下大雨。还有 9 天，出发前再看</td>
+<td>尼斯 17–23°C · 雨 16%</td>
+<td><strong>分歧最大的一天</strong>：<strong>同一时刻（10/17 14:00）Weather Channel 给尼斯 22°C、yr.no 给 14.9°C，差 7 度</strong>，yr.no 还单独报了 21 mm 的雨。三家里两家说晴。还有 9 天，出发前再看</td>
 </tr>
 <tr>
 <td>10/18 周日</td>
 <td>4:45 出门去机场</td>
 <td>15–22°C · 雨 16%</td>
 <td>（超出范围）</td>
-<td>16–22°C · 雨 24%</td>
+<td>17–22°C · 雨 21%</td>
 <td>凌晨 4–5 点 15°C、体感 14°C，风 12 km/h</td>
 </tr>
 </tbody>
@@ -456,7 +456,7 @@ td img.big,p img.big{max-width:100%;max-height:190px;}
 <li><strong>泳衣（可选）</strong>——海水约 20°C。</li>
 <li><strong>不用带正装</strong>——Bofinger 和 Mayssa Beach 都没有着装要求。</li>
 </ul></div>
-<p class="muted small">三家数据都是 2026-10-08 当天拉的：Open-Meteo（api.open-meteo.com，best-match 混合 + ECMWF / Météo-France / ICON / GFS / UKMO 单模型对照）、挪威气象局 yr.no（api.met.no locationforecast 2.0 complete）、The Weather Channel（api.weather.com 15 天逐日 + 逐小时）。<strong>10/16 之后仍有 8 天以上提前量，出发前一两天要再刷一次。</strong></p>
+<p class="muted small">三家数据都是 2026-10-08 当天拉的：Open-Meteo（api.open-meteo.com，best-match 混合 + ECMWF / Météo-France / ICON / GFS / UKMO 单模型对照）、挪威气象局 yr.no（api.met.no locationforecast 2.0 complete）、The Weather Channel / IBM（api.weather.com 15 天逐日 + 逐小时，取 <code>calendarDayTemperatureMin/Max</code>，即真正 00:00–24:00 的极值）。<strong>第三列由 Codex 独立跑了一遍再和本机的结果对账</strong>，两边抓到的原始响应一致。<strong>10/16 之后仍有 8 天以上提前量，出发前一两天要再刷一次。</strong></p>
 <h2 id="overview">1. 旅程总览</h2>
 <h3 id="overview-days">每天去哪儿</h3>
 <div class="tw"><table class="fixed">
