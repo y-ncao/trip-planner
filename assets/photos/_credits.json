@@ -326,5 +326,61 @@
   "license": "CC BY-SA 4.0",
   "page": "https://commons.wikimedia.org/wiki/File%3AArashiyamaTogetsukyo_Kyoto.jpg",
   "bytes": 417343
+ },
+ {
+  "slug": "ginkakuji",
+  "file": "File:Ginkaku-ji after being restored in 2008.jpg",
+  "author": "Laitr Keiows",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File%3AGinkaku-ji_after_being_restored_in_2008.jpg",
+  "bytes": 916923
+ },
+ {
+  "slug": "philosophers-path",
+  "file": "File:Tetsugaku no Michi 01.JPG",
+  "author": "Reggaeman",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File%3ATetsugaku_no_Michi_01.JPG",
+  "bytes": 1166160
+ },
+ {
+  "slug": "nijo-castle",
+  "file": "File:Nijo Castle Ninomaru 03.JPG",
+  "author": "Reggaeman",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File%3ANijo_Castle_Ninomaru_03.JPG",
+  "bytes": 778439
+ },
+ {
+  "slug": "kamogawa",
+  "file": "File:Kamo-gawa in Kyoto hdsr S5 01.jpg",
+  "author": "Hyppolyte de Saint-Rambert",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File%3AKamo-gawa_in_Kyoto_hdsr_S5_01.jpg",
+  "bytes": 704523
+ },
+ {
+  "slug": "nankinmachi",
+  "file": "File:Kobe Nankinmachi at night.jpg",
+  "author": "Laitr Keiows",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File%3AKobe_Nankinmachi_at_night.jpg",
+  "bytes": 774399
+ },
+ {
+  "slug": "meriken",
+  "file": "File:Kobe-meriken-park-port-tower.jpg",
+  "author": "Tomomarusan",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File%3AKobe-meriken-park-port-tower.jpg",
+  "bytes": 205196
+ },
+ {
+  "slug": "rokko-view",
+  "file": "File:Night View from Mount Rokko 2008-02.JPG",
+  "author": "Mugu-shisai",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File%3ANight_View_from_Mount_Rokko_2008-02.JPG",
+  "bytes": 447346
  }
 ]
