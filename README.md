@@ -2,7 +2,8 @@
 
 纯静态网站，托管在 GitHub Pages。**根目录永远放「当前行程」**，旧行程搬进 `archive/<行程名>/` 归档。
 
-- 当前行程（2026-10-10 → 10-18 巴黎 + 南法生日旅行）：https://y-ncao.github.io/trip-planner/
+- 当前行程（2026-12 京都 + 关西，和妈妈两个人，日期待定）：https://y-ncao.github.io/trip-planner/
+- 已归档（2026 巴黎 + 南法）：https://y-ncao.github.io/trip-planner/archive/paris-nice-2026/
 - 已归档（2026 东京）：https://y-ncao.github.io/trip-planner/archive/tokyo-2026/
 
 ## 文件夹结构
@@ -10,15 +11,17 @@
 ```text
 trip-planner/
 ├── index.html            当前行程页面（单文件，CSS / JS 内联）
-├── assets/photos/        当前行程图片（Wikimedia Commons，作者与协议列在页面 §8）
+├── assets/photos/        当前行程图片（Wikimedia Commons，作者与协议列在页面最后一节）
+├── data/                 查询快照（酒店积分价等），不渲染到页面，供下次比对
 ├── archive/
+│   ├── paris-nice-2026/  2026 巴黎 + 南法：index.html + assets/，自包含
 │   └── tokyo-2026/       2026 东京：index.html + assets/ + scripts/，自包含
 ├── publish.sh            提交并推送，GitHub Pages 自动更新
 ├── .nojekyll             让 GitHub Pages 跳过 Jekyll，按原样托管
 └── README.md
 ```
 
-页面结构沿用东京版：左侧导航、旅程总览、机票、酒店、每日行程表（模块 / 地点 / 图片 / 备注）、必吃榜、景点清单、出发前准备、Archive。
+页面结构沿用东京版和巴黎版：左侧导航、旅程总览、机票、酒店、每日行程表（模块 / 地点 / 图片 / 备注）、必吃榜、景点清单、天气、交通票券、出发前准备、Archive。
 
 - **每日地图**读取当天行程表里地点链接的 `data-lat` / `data-lng`。改了表格里的地点，地图编号和「Google Maps 路线」按钮会自动跟着变，不用单独维护地图数据。底图来自 OpenStreetMap / CARTO，Leaflet 从 cdnjs 加载。
 - **图片**全部存在本地 `assets/`，不引用远程图片。
@@ -31,7 +34,7 @@ trip-planner/
 ./publish.sh "更新说明"
 ```
 
-脚本只提交网站相关的文件（`index.html`、`assets/`、`archive/`、`README.md`、`publish.sh`、`.nojekyll`）。推送后大约 1 分钟线上生效。
+脚本只提交网站相关的文件（`index.html`、`assets/`、`archive/`、`data/`、`README.md`、`publish.sh`、`.nojekyll`）。推送后大约 1 分钟线上生效。
 
 本地预览：
 
@@ -44,10 +47,12 @@ python3 -m http.server 8765
 ## 归档当前行程，开始下一个
 
 ```bash
-mkdir -p archive/paris-2026
-git mv index.html archive/paris-2026/index.html
-git mv assets archive/paris-2026/assets
+mkdir -p archive/<行程名>
+git mv index.html archive/<行程名>/index.html
+git mv assets archive/<行程名>/assets
 ```
+
+搬完记得把旧页面左侧导航里的相对链接改掉（`archive/xxx/` → `../xxx/`），并在新旧页面的「Trip Planner」区块里互相加上链接。
 
 然后在根目录放新行程的 `index.html` 和 `assets/`，并在新旧两个页面左侧导航的「Trip Planner」区块里互相加上链接。页面里的图片都用相对路径，整个文件夹一起搬过去就不会断图。
 

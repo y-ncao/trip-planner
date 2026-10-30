@@ -11,7 +11,7 @@ command -v gh >/dev/null || { echo "需要 GitHub CLI: brew install gh && gh aut
 
 # 只提交网站相关文件，避免把本地杂项带进仓库
 paths=()
-for p in index.html assets archive README.md publish.sh .nojekyll; do
+for p in index.html assets archive data README.md publish.sh .nojekyll; do
   [ -e "$p" ] && paths+=("$p")
 done
 git add -A -- "${paths[@]}"
