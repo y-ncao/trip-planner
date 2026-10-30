@@ -36,6 +36,8 @@ trip-planner/
 
 脚本只提交网站相关的文件（`index.html`、`assets/`、`archive/`、`data/`、`README.md`、`publish.sh`、`.nojekyll`）。推送后大约 1 分钟线上生效。
 
+> **别用 `git add -A`。** 它会把 `.claude/` 一起提交进来，而里面的 `worktrees/` 是指向本机的 git worktree —— 提交后仓库里会出现一个指向外部 commit 的 submodule 引用，**GitHub Pages 的构建会直接失败**（Pages 界面只写一句 "Page build failed."，不说原因）。`.gitignore` 现在挡掉了 `.claude/`，但手动 `git add` 时还是按 `publish.sh` 那份清单来。
+
 本地预览：
 
 ```bash
